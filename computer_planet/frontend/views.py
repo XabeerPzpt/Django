@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 def homepage(request):
-    return render(request,'base.html')
+    return render(request,'home.html')
 def about(request):
     return render(request,'aboutUs.html')
 def courses(request):

@@ -49,13 +49,12 @@ nav ul li a {
 }
 
 /* Hero Section Styles */
-#hero {
+#hero{
     background-color: #f4f4f4;
     padding: 70px 0;
     text-align: center;
     margin-top: 60px; /* Adjust margin-top to push content below fixed header */
 }
-
 #hero h2 {
     margin-bottom: 20px;
 }
@@ -91,8 +90,9 @@ transition: background-color 0.3s, color 0.3s;
  border-radius: 5px;
  text-decoration: none;
  }
- a:hover {
-    color: red; /* Change text color to red */
+a:hover {
+    color: red; 
     background-color: greenyellow;
+    transition: 0.3s;
   }
   
