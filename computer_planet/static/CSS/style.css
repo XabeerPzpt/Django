@@ -1,0 +1,98 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 60px; /* Adjust body padding to accommodate fixed header */
+    padding-bottom: 60px; /* Adjust body padding to accommodate fixed footer */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensure header is above other content */
+}
+
+header h1 {
+    margin: 0;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 50px;
+}
+
+/* Hero Section Styles */
+#hero {
+    background-color: #f4f4f4;
+    padding: 70px 0;
+    text-align: center;
+    margin-top: 60px; /* Adjust margin-top to push content below fixed header */
+}
+
+#hero h2 {
+    margin-bottom: 20px;
+}
+
+/* About, Courses, Gallery Sections Styles */
+section {
+    padding: 70px 0;
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+#login{
+background-color: blue;
+transition: background-color 0.3s, color 0.3s;
+ position: absolute;
+ right: 50px;
+ top: 20px;
+ border: solid;
+ padding: 7px;
+ border-radius: 5px;
+ text-decoration: none;
+ }
+ a:hover {
+    color: red; /* Change text color to red */
+    background-color: greenyellow;
+  }
+  
