@@ -11,8 +11,8 @@ def gallery(request):
     return render(request,'gallery.html')
 def services(request):
     return render(request,'services.html')
-def dashboard(request):
-    return render(request,'dashboard.html')
+def attendance(request):
+    return render(request,'attendance.html')
 def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -21,7 +21,7 @@ def login_view(request):
         if user is not None:
             login(request, user)
             # Redirect to dashboard or any other page after successful login
-            return redirect('dashboard')
+            return redirect('attendance')
         else:
             # Return an error message or render the login form again with an error message
             return render(request, 'login.html', {'error_message': 'Invalid username or password.'})
