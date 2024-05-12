@@ -1,5 +1,26 @@
 {% extends "base.html" %}
 {% block title %}Courses{% endblock title %}
+{% block styling %}<style>
+  .content{
+      position: relative;
+      top: 100px;
+      margin:5px 30px;
+  }{% endblock styling %}
 {% block content %}
-<h1>This is courses page</h1>
-{% endblock content %}
+<section class='content'>
+{% for course in courses %}
+    <div class="card" style="width: 18rem; display:inline-block; margin:10px">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{course.course_name}}</h5>
+          <p class="card-text">This is my course </p>
+          <a href="#" class="btn btn-primary">Enroll Now</a>
+        </div>
+      </div>
+{% endfor %}
+</section>    
+{% endblock content %} 
+
+    
+   
+

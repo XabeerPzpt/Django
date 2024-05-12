@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+from accounts.models import Course
 def homepage(request):
     return render(request,'home.html')
 def about(request):
     return render(request,'aboutUs.html')
 def courses(request):
-    return render(request,'courses.html')
+    courses=Course.objects.all()
+    return render(request,'courses.html',{'courses':courses})
 def gallery(request):
     return render(request,'gallery.html')
 def services(request):

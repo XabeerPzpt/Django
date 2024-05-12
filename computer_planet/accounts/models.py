@@ -8,17 +8,17 @@ class Teacher(models.Model):
     def __str__(self):
         return self.user.username
 class Student(models.Model):
-    Fullname = models.CharField(max_length=50)
+    fullname = models.CharField(max_length=50, null=False)
     Address = models.CharField(max_length=50)
     email = models.EmailField(max_length=254)
     phone_number = models.CharField(max_length=10)
-    courses = models.ManyToManyField("Course", related_name="student")
+    course = models.ForeignKey("Course", null=True, on_delete=models.SET_NULL ,default=0)
     def __str__(self):
-        return self.Fullname
+        return self.fullname
 class Course(models.Model):
-    course_name = models.CharField(primary_key=True,null=False, max_length=50)
+    cid=models.AutoField(primary_key=True)
+    course_name = models.CharField(null=False, max_length=50)
     price = models.IntegerField()
-    Duration = models.IntegerField()
-    students = models.ManyToManyField("Student", related_name="course")
+    Months_duration = models.IntegerField()
     def __str__(self):
         return self.course_name
