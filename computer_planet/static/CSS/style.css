@@ -91,6 +91,11 @@ transition: background-color 0.3s, color 0.3s;
  border-radius: 5px;
  text-decoration: none;
  }
+#login:hover {
+    color: red; 
+    background-color: greenyellow;
+    transition: background-color 1s ease;
+  }
 a:hover {
     color: red; 
     background-color: greenyellow;

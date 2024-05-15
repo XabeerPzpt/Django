@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Sheet</title>
+    <style type='text/css'>
+        .display{
+            width:200px;
+            height:100px;
+            margin:50px;
+            padding: 20px;
+            cursor: pointer;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body onload='Hide()'>
+    {% comment %} <button id='Back' onclick='Back()'></button> {% endcomment %}
+    <h1>Welcome to attendance</h1>
+    {% comment %} <h2 id='title'>Select a course to make attendance</h2> {% endcomment %}
+    <div id='attendance-sheet'>
+    {% for course in courses %}
+    <button class='display' onclick='attendance("{{course.course_name}}", "{{course.cid}}")'>{{course.course_name}}</button>
+    {% endfor %}
+    </div>
+    {% comment %} <table id='table' style="border-collapse: collapse;">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+        </tr>
+        </thead>
+        <tbody id='student_list'>
+
+        </tbody>
+    </table> {% endcomment %}
+    <script>
+        function attendance(course_name,cid){
+            let content = document.getElementById('attendance-sheet');
+            content.innerHTML="Attendance for " + course_name;
+            //let Back = document.getElementById('Back');
+           // Back.style.display='inline-block';
+            //Back.innerHTML="Go Back";
+           // Back.style.position='absolute';
+          //  Back.style.right= '30px';
+          //  document.getElementById('table').style.display='block';
+            
+            
+         /*   fetch('/frontend/get_students/?course_id='+cid)
+            .then(response => response.json())
+            .then(data => {
+                 
+        }*/
+        function Hide(){
+           // document.getElementById('table').style.display='none';
+          //  let Back=document.getElementById('Back').style.display='none';
+           // Back.style.cursor='pointer';
+        }
+        function Back(){
+          //  location.reload();
+        }
+    </script>
+</body>
+</html>
+
+{% comment %} /* fetch('/frontend/get_students/?course_id='+cid)
+            .then(response => response.json())
+            .then(data => {
+                const studentList = document.getElementById('student_list');
+                studentList.innerHTML='';
+                data.forEach(student => {
+                    const row = document.createElement('tr');
+                    row.innerHTML=
+                    <td>{{student.fullname}}</td>
+                    <td>{{student.address}}</td>
+                    ;
+                    studentList.appendChild(row);
+                });
+            });   */
+            {% endcomment %}
