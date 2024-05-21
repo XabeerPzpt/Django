@@ -1,0 +1,16 @@
+{% extends "attendance.html" %}
+{% block content %}
+<h1>Attendance record of {{student.fullname}}</h1>
+<table style='border-collapse: collapse;'  class="table table-hover">
+<thead>
+    <th>Date</th>
+    <th>Presence</th>
+</thead>
+<tbody>
+    {% for record in records %}
+    <td>{{record.date}}</td>
+    <td>{{record.is_present}}</td>
+    {% endfor %}
+</tbody>
+</table>
+{% endblock content %}

@@ -1,0 +1,10 @@
+<h1>Student Profile </h1>
+<p>Name : {{student.fullname}}</p>
+<p>Address : {{student.Address}}</p>
+<p>Email : {{student.email}}</p>
+<p>Phone : {{student.phone_number}}</p>
+<p>Courses :
+          {% if student.course1 %}{{student.course1}}{% endif %}
+          {% if student.course2 %},&nbsp;&nbsp;{{student.course2}}{% endif %}
+          {% if student.course3 %},&nbsp;&nbsp;{{student.course3}}{% endif %}
+</p>

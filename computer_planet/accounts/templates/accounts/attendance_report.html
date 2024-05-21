@@ -1,0 +1,23 @@
+{% extends "attendance.html" %}
+{% block content %}
+<h1>Attendance Report</h1>
+<table style='border-collapse: collapse;'  class="table table-hover">
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Total Days Present</th>
+    </thead>
+    <tbody>
+        {% for report in reports %}
+        <tr>
+            <td>{{report.student.id}}</td>
+            <td> <a href="{% url 'individual_report' report.student.id %}">
+                {{report.student.fullname}}</a></td>
+            <td> 
+                {{report.total_days_present}}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody> 
+</table>
+{% endblock content %}
