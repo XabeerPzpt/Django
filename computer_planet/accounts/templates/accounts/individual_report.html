@@ -1,15 +1,20 @@
 {% extends "attendance.html" %}
+{% block styling %}
+
+{% endblock styling %}
 {% block content %}
 <h1>Attendance record of {{student.fullname}}</h1>
 <table style='border-collapse: collapse;'  class="table table-hover">
 <thead>
     <th>Date</th>
-    <th>Presence</th>
+    <th>Status</th>
 </thead>
 <tbody>
     {% for record in records %}
+    <tr>
     <td>{{record.date}}</td>
-    <td>{{record.is_present}}</td>
+    <td style="{% if record.is_present == 'Present' %}color:#1FDA25;{% else %}color:red;{% endif %}">{{record.is_present}}</td>
+    </tr>
     {% endfor %}
 </tbody>
 </table>

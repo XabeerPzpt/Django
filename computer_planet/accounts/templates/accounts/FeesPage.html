@@ -1,0 +1,24 @@
+{% extends "attendance.html" %}
+{% block content %}
+<h2>Fees of Students :</h2>
+<table style='border-collapse: collapse;'  class="table table-hover">
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Courses</th>
+        <th>Total Fees</th> 
+    </thead>
+    <tbody>
+       {% for student in students %}
+       <tr>
+        <td>{{student.id}}</td>
+        <td>{{student.fullname}}</td>
+        <td>{% if student.course1 %}{{student.course1}}{% endif %}
+            {% if student.course2 %},&nbsp;&nbsp;{{student.course2}}{% endif %}
+            {% if student.course3 %},&nbsp;&nbsp;{{student.course3}}{% endif %}</td>
+        <td>{{student.total_fee}}</td>
+       </tr>
+       {% endfor %}
+    </tbody>
+</table><br><br>
+{% endblock content %}

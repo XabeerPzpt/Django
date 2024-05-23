@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 import datetime
+from django.utils import timezone
 
 date = datetime.datetime.now().date
 class Teacher(models.Model):
@@ -16,6 +17,7 @@ class Student(models.Model):
     course1 = models.ForeignKey("Course",null=True, on_delete=models.SET_NULL, blank=True, related_name="course1")
     course2 = models.ForeignKey("Course",null=True, on_delete=models.SET_NULL, blank=True, related_name="course2")
     course3 = models.ForeignKey("Course",null=True, on_delete=models.SET_NULL, blank=True, related_name="course3")
+    total_fee=models.IntegerField(default=0)
   
     def __str__(self):
         return self.fullname
@@ -38,3 +40,7 @@ class Attendance(models.Model):
     is_present = models.CharField(max_length=7)
     def __str__(self):
         return f"{self.student.fullname} - {self.date} = {self.is_present}"
+class Today(models.Model):
+    date = models.DateField()
+    def __str__(self):
+        return self.date

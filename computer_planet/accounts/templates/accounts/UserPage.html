@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        .Option{
+            color: white;
+            font-size: 20px;
+            background-color: #336CFA;
+            margin: 50px;
+            padding: 20px;
+            display: inline-block;
+            width: 150px;
+            height: 20px;
+            border: solid 1px;
+            border-radius: 15px;
+        }
+        .Option: hover{
+            background-color: red;
+            transition: background-color 1s ease;
+        }
+    </style>
+</head>
+<body>
+<br>
+<hr>
+<h2 style="color:#1FDA25;">Login Successful</h2>
+<hr>
+<br>
+<a href="{% url "attendance" %}">
+    <div class="Option">Make Attendance</div>
+</a>
+
+<a href="{% url "FeesPage" %}">
+    <div class="Option">Manage Fees</div>
+</a>
+</body>
+</html>
